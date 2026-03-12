@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Custom Afriipower Theme Variables */
+@theme {
+  /* Colors */
+  --color-afrii-blue: #1E3A8A;       /* Deep corporate trust blue */
+  --color-afrii-lightblue: #3B82F6;  /* Accent blue for charts */
+  --color-afrii-green: #10B981;      /* Renewable/Solar green for success metrics */
+  --color-afrii-darkgreen: #047857;  /* Hover states for green */
+  --color-afrii-orange: #F59E0B;     /* Warning/Alert color for missed targets */
+  --color-afrii-gray: #F3F4F6;       /* Dashboard background */
+  --color-afrii-dark: #111827;       /* Main text color */
+
+  /* Optional: Override default font if you want */
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Basic body reset */
+body {
+  background-color: var(--color-afrii-gray);
+  color: var(--color-afrii-dark);
+}
