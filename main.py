@@ -5,8 +5,11 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, Session
 from typing import List
 import os
+from dotenv import load_dotenv
 
-NEON_DATABASE_URL = "postgresql://neondb_owner:npg_MV1GnBLW7EQX@ep-restless-mud-adje84ce-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+load_dotenv()
+
+NEON_DATABASE_URL=os.getenv("NEON_DATABASE_URL")
 engine = create_engine(NEON_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
