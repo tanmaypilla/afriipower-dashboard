@@ -14,10 +14,11 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const kpiRes = await axios.get(`http://localhost:8000/api/kpis/${repId}?month=${selectedMonth}`);
+        const API_URL = import.meta.env.VITE_API_URL;
+        const kpiRes = await axios.get(`${API_URL}/api/kpis/${repId}?month=${selectedMonth}`);
         setKpis(kpiRes.data);
 
-        const prodRes = await axios.get(`http://localhost:8000/api/products/${repId}?month=${selectedMonth}`);
+        const prodRes = await axios.get(`${API_URL}/api/products/${repId}?month=${selectedMonth}`);
         setProducts(prodRes.data);
       } catch (error) {
         console.error("Error fetching data", error);
